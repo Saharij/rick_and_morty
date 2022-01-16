@@ -1,0 +1,70 @@
+@mixin hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@mixin button-basic {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  border: 1px solid #000;
+  border-radius: 3px;
+  width: 70px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.button {
+  &-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+  }
+
+  &__no-like {
+    @include button-basic;
+    background-color: transparent;
+    letter-spacing: 0.4px;
+    transition: background-color 0.3s, transform 0.3s;
+
+    &:hover {
+      background-color: peachpuff;
+      @include hover;
+    }
+  }
+
+  &__liked {
+    @include button-basic;
+    background-color: red;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.3s;
+
+    &:hover {
+      @include hover;
+    }
+  }
+
+  &__open {
+    @include button-basic;
+    background-color: transparent;
+    transition: background-color 0.3s, transform 0.3s;
+
+    &:hover {
+      background-color: peachpuff;
+      @include hover;
+    }
+  }
+
+  &__close {
+    @include button-basic;
+    color: #fff;
+    background-color: rgb(197, 85, 10);
+    transition: background-color 0.3s, transform 0.3s;
+
+    &:hover {
+      @include hover;
+    }
+  }
+}
+
+
